@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Timer_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-nX-0lS" userLabel="Timer">
+                                <rect key="frame" x="145" y="20" width="310" height="180"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="A8H-dP-eQo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="109"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="htY-TK-RQW" appends="YES" id="Xyv-uN-KHw"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCB-6v-vE1">
+                                <rect key="frame" x="245" y="520" width="110" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="YRv-sq-WbV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Старт">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LYG-x3-0Bc"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWv-ry-7e0">
+                                <rect key="frame" x="145" y="520" width="110" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Xax-NH-BnZ"/>
+                                    <constraint firstAttribute="height" constant="60" id="zRI-cj-eVN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Стоп">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="45" y="526" width="68" height="48"/>
+                                </variation>
+                                <connections>
+                                    <action selector="stopTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kxq-g8-fkg"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj2-JH-ZfJ">
+                                <rect key="frame" x="345" y="520" width="110" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="z3f-26-yJx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Пауза">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="245" y="520" width="110" height="60"/>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseTimer:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vco-NP-JLI"/>
+                                </connections>
+                            </button>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0N-Ki-oqY" userLabel="Timer Picker View">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="zCB-6v-vE1" firstAttribute="baseline" secondItem="XWv-ry-7e0" secondAttribute="firstBaseline" id="4gI-gb-aHt"/>
+                            <constraint firstItem="zCB-6v-vE1" firstAttribute="baseline" secondItem="Zj2-JH-ZfJ" secondAttribute="baseline" id="89Y-N0-p7r"/>
+                            <constraint firstItem="XWv-ry-7e0" firstAttribute="leading" secondItem="kyr-nX-0lS" secondAttribute="leading" id="8l9-W3-X1M"/>
+                            <constraint firstItem="Zj2-JH-ZfJ" firstAttribute="leading" secondItem="XWv-ry-7e0" secondAttribute="trailing" constant="90" id="HMW-Xz-L5h"/>
+                            <constraint firstItem="zCB-6v-vE1" firstAttribute="baseline" secondItem="Zj2-JH-ZfJ" secondAttribute="firstBaseline" id="IOH-Ns-lra"/>
+                            <constraint firstItem="XWv-ry-7e0" firstAttribute="baseline" secondItem="zCB-6v-vE1" secondAttribute="firstBaseline" id="Tnp-ds-JiS"/>
+                            <constraint firstItem="zCB-6v-vE1" firstAttribute="centerX" secondItem="kyr-nX-0lS" secondAttribute="centerX" id="V2Y-nW-XuX"/>
+                            <constraint firstAttribute="bottom" secondItem="XWv-ry-7e0" secondAttribute="bottom" constant="20" symbolic="YES" id="X51-gg-HeD"/>
+                            <constraint firstItem="Zj2-JH-ZfJ" firstAttribute="top" secondItem="zCB-6v-vE1" secondAttribute="top" id="XKo-qg-ReO"/>
+                            <constraint firstItem="Zj2-JH-ZfJ" firstAttribute="trailing" secondItem="kyr-nX-0lS" secondAttribute="trailing" id="XM3-a7-Zth"/>
+                            <constraint firstItem="kyr-nX-0lS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ZEp-Q6-JUM"/>
+                            <constraint firstItem="y0N-Ki-oqY" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="fnU-jp-lgU"/>
+                            <constraint firstItem="y0N-Ki-oqY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hxs-aZ-ldi"/>
+                            <constraint firstItem="XWv-ry-7e0" firstAttribute="top" secondItem="zCB-6v-vE1" secondAttribute="top" id="k4C-eQ-jot"/>
+                            <constraint firstItem="zCB-6v-vE1" firstAttribute="centerX" secondItem="y0N-Ki-oqY" secondAttribute="centerX" id="kCV-20-P8b"/>
+                            <constraint firstAttribute="trailing" secondItem="y0N-Ki-oqY" secondAttribute="trailing" id="nCU-dh-bzf"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HZc-mM-BVO" appends="YES" id="o0N-1N-VyU"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="Zj2-JH-ZfJ" id="Ucv-5B-OTC"/>
+                        <outlet property="startButton" destination="zCB-6v-vE1" id="1Fa-J8-d5r"/>
+                        <outlet property="stopButton" destination="XWv-ry-7e0" id="uWt-sN-sPr"/>
+                        <outlet property="tapGestureHidePickerView" destination="HZc-mM-BVO" id="fK0-on-O3T"/>
+                        <outlet property="timerLabel" destination="kyr-nX-0lS" id="lTG-l4-idZ"/>
+                        <outlet property="timerPickerView" destination="y0N-Ki-oqY" id="Acq-XU-uNO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HZc-mM-BVO" userLabel="Tap Gesture Recognizer Hide Picker View">
+                    <connections>
+                        <action selector="hideTimerPickerView:" destination="vXZ-lx-hvc" id="U96-lW-Ulz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="htY-TK-RQW" userLabel="Tap Gesture Recognizer Show Picker View">
+                    <connections>
+                        <action selector="showTimerPickerView:" destination="vXZ-lx-hvc" id="DqX-uk-Qq7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="591" y="447"/>
+        </scene>
+    </scenes>
+</document>
